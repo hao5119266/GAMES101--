@@ -72,7 +72,7 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
 
     presp_to_ortho_matrix<< zNear,0,0,0,\
                             0,zNear,0,0,\
-                            0,0,zNear+zFar,0,\
+                            0,0,zNear+zFar,-zNear*zFar,\
                             0,0,1,0;
     projection = orthographic_matrix*presp_to_ortho_matrix;
                         
@@ -114,7 +114,7 @@ int main(int argc, const char** argv)
 
     rst::rasterizer r(700, 700);
 
-    Eigen::Vector3f eye_pos = {0, 0, 10};
+    Eigen::Vector3f eye_pos = {0, 0, 5};
 
     std::vector<Eigen::Vector3f> pos{{2, 0, -2}, {0, 2, -2}, {-2, 0, -2}};
 
