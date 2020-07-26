@@ -72,7 +72,7 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
 
     presp_to_ortho_matrix<< zNear,0,0,0,\
                             0,zNear,0,0,\
-                            0,0,zNear+zFar,-zNear*zFar,\
+                            0,0,zNear+zFar,-1*(zNear*zFar),\
                             0,0,1,0;
     projection = orthographic_matrix*presp_to_ortho_matrix;
                         
