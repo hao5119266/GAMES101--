@@ -147,7 +147,7 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t) {
     }
     */
     
-    //4*4MSAA
+    //4*4SAA
     for(int x=x_min;x<=x_max;x++){
         for(int y=y_min;y<=y_max;y++){
             //float d[] = {0.25f,0.75f};
